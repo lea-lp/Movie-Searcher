@@ -1,0 +1,43 @@
+<div class="center jumbotron text-center">
+
+    <h1>MovieSearcher.com</h1><br>
+    <h3>All your favorite movies online !</h3>
+
+</div>
+
+<br>
+
+<div class="row">
+    
+    <div class="col-md-4 offset-md-4">
+      <h3>Chercher un film</h3>
+      <form action="/search" method="POST">
+         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+         <div class="form-group">
+           <input type="text" class="form-control" name="movie_name" placeholder="Nom du film">
+         </div>
+         <button type="submit" class="btn btn-primary">Chercher</button>
+      </form>
+    </div>
+
+</div>
+
+<br><br>
+
+<%if @movies%>
+  <div class="row">
+    <% @movies.each do |movie_id, hash_results| %>
+      <div class="card col-lg-3" >
+        <div class="card-body">
+          <div style="diplay: flex">
+            <h5 class="card-title"> 
+              Titre : <%= hash_results[:name] %>  
+            </h5>
+          </div>
+          <h6 class="card-subtitle mb-2 text-muted"> <strong>Date de sortie</strong> : <%=hash_results[:release_date]%> </h6>
+          <p class="card-text" > <strong>Contenu</strong>: ????? </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<%end%>
