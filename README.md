@@ -1,24 +1,6 @@
-# README
+# Movie Searcher  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> made by Lea Leipp (@Lea Lp) et Clément Baldy (@Clem B) with love
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## lien Heroku  
+https://movie-searcher-bg.herokuapp.com/

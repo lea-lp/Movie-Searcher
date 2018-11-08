@@ -3,7 +3,7 @@ class SearchMovie
   def initialize(string)
     @string = string
     @result = Hash.new
-    
+
   end
 
   def perform
@@ -12,7 +12,7 @@ class SearchMovie
     @movies = Tmdb::Movie.find(@string)
 
     @movies.each_with_index do |movie, index|
-      if index == 19
+      if index == 20
         break
       end
       name = movie.title
