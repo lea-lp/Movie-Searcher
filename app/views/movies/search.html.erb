@@ -34,11 +34,14 @@
         <div class="card-body">
           <div style="diplay: flex">
             <h5 class="card-title"> 
-              Titre : <%= hash_results[:name] %>  
+              <strong>Titre : <%= hash_results[:name] %>  </strong>
             </h5>
           </div>
           <h6 class="card-subtitle mb-2 text-muted"> <strong>Date de sortie</strong> : <%=hash_results[:release_date]%> </h6>
-          <p class="card-text" > <strong>Contenu</strong>: ????? </p>
+          <p class="card-text" > <strong>Réalisateur</strong>: <%=hash_results[:director]%>  </p>
+          <div class="text-center">
+            <img src="https://image.tmdb.org/t/p/w200<%=hash_results[:url_poster]%>" alt="Movie poster: <%=hash_results[:name]%>">
+          </div>
         </div>
       </div>
     <% end %>

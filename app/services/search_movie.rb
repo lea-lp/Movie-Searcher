@@ -15,11 +15,24 @@ class SearchMovie
       if index == 20
         break
       end
+
       name = movie.title
       release = movie.release_date
 
-      @result[movie.id] = {name: name, release_date: release}
-      puts @result[movie.id]
+      crew = Tmdb::Movie.credits(movie.id)["crew"]
+      director = ""
+      crew.each do |person|
+        if person["job"]=="Director"
+          director = person["name"]
+        end
+      end
+      if director == ""
+        director = "...non trouvé..."
+      end
+
+      url_poster = movie.poster_path
+
+      @result[movie.id] = {name: name, release_date: release, director: director, url_poster: url_poster}
     end
     return @result
   end
